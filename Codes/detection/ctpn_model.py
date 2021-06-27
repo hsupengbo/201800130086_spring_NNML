@@ -85,10 +85,7 @@ class BasicConv(nn.Module):
 class CTPN_Model(nn.Module):
     def __init__(self):
         super().__init__()
-        #base_model = models.resnet50(pretrained=False)
-        #layers = list(base_model.children())[:-1]
-        #self.base_layers = nn.Sequential(*layers)
-        base_model = models.vgg19(pretrained=True)
+        base_model = models.vgg16(pretrained=True)
         layers = list(base_model.features)[:-1]
         self.base_layers = nn.Sequential(*layers)  # block5_conv3 output
 
